@@ -1,3 +1,9 @@
+
+
+
+
+
+
 # Hyderabad-Metro-Optimization
 
 I have been travelling with my wife in metro for the past 3 weeks regularly and looking at the traffic along with the occupancy of metros wanted to understand if there were any operational issues that could be fixed.
@@ -68,7 +74,10 @@ plt.ylabel('Number of Trips')
 plt.xticks(rotation=45)
 plt.grid(True)
 plt.show()
+```
 
+![No of trips](https://github.com/user-attachments/assets/01a5bd69-bb6d-4903-8fe3-3bf982fffc05)
+```python
 # plotting the locations of the stops
 plt.figure(figsize=(10, 10))
 sns.scatterplot(x='stop_lon', y='stop_lat', data=stops, color='red', s=50, marker='o')
@@ -77,7 +86,10 @@ plt.xlabel('Longitude')
 plt.ylabel('Latitude')
 plt.grid(True)
 plt.show()
+```
+![Geographical](https://github.com/user-attachments/assets/e179115a-0f50-4f22-93a2-e11ec2fab399)
 
+```python
 # Creating additional column with only strings of stop_id
 stops['stopping_id'] = stops['stop_id'].str.slice(stop=3)
 stop_times['stopping_id'] = stop_times['stop_id'].str.slice(stop=3)
@@ -103,7 +115,9 @@ plt.ylabel('Latitude')
 plt.legend(title='Number of Routes')
 plt.grid(True)
 plt.show()
-
+```
+![Hub points-Junction](https://github.com/user-attachments/assets/81c86504-dc86-49c3-95d3-7337dfed1230)
+```python
 # converting stop_times 'arrival_time' from string to datetime.time for easier manipulation
 import datetime as dt
 
@@ -154,7 +168,10 @@ plt.xlabel('Part of Day')
 plt.ylabel('Average Interval (minutes)')
 plt.grid(True)
 plt.show()
+```
+![Average interval](https://github.com/user-attachments/assets/fec1aaeb-29ef-49be-91a7-a085605d3d78)
 
+```python
 # define time intervals for classification
 def classify_time_interval(time):
     if time < dt.time(6, 0):
@@ -189,6 +206,8 @@ plt.ylabel('Number of Trips')
 plt.grid(True)
 plt.show()
 ```
+![Part of day trips](https://github.com/user-attachments/assets/b26d4992-caed-4646-ad0e-31a5f8e35817)
+
 ```python
 
 # adjusting frequencies based on hypothetical scenario
@@ -219,3 +238,4 @@ plt.show()
 
 
 ```
+![Post Adjustments](https://github.com/user-attachments/assets/bb04af4d-1e1d-4b2d-9dcc-f7787d96c2c7)
